@@ -1,79 +1,239 @@
+/* 1. Use a more-intuitive box-sizing model */
+@font-face {
+  font-family: "Martian Mono";
+  src: url(/landing-page/src/assets/fonts/martian-mono/MartianMono-VariableFont_wdth\,wght.ttf)
+    format("truetype-variations");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Martian Mono";
+  src: url(/landing-page/src/assets/fonts/inter/Inter-VariableFont_opsz\,wght.ttf)
+    format("truetype-variations");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* Colors */
+
+  /* Neutral */
+  --clr-neutral-900: #062630;
+  --clr-neutral-700: #385159;
+  --clr-neutral-200: #e6e1df;
+  --clr-neutral-100: #faf5f3;
+  --clr-neutral-0: #ffffff;
+
+  /* Accent / Light Salmon */
+  --clr-light-salmon-500: #fea36f;
+  --clr-light-salmon-100: #ffe2d1;
+  --clr-light-salmon-50: #fff5ef;
+
+  /* Gradients */
+  --gradient-text: linear-gradient(107deg, #ff9a60 -11.37%, #062630 61.84%);
+  --gradient-bg: linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%);
+}
+
+/*Root Design Tokens*/
+:root {
+  /* Colors */
+  --clr-neutral-900: #062630;
+  --clr-neutral-700: #385159;
+  --clr-neutral-200: #e6e1df;
+  --clr-neutral-100: #faf5f3;
+  --clr-neutral-0: #ffffff;
+
+  --clr-light-salmon-500: #fea36f;
+  --clr-light-salmon-100: #ffe2d1;
+  --clr-light-salmon-50: #fff5ef;
+
+  --gradient-text: linear-gradient(107deg, #ff9a60 -11.37%, #062630 61.84%);
+  --gradient-bg: linear-gradient(90deg, #ffe2d1 0%, #fff5ef 100%);
+
+  /* Font Families */
+  --ff-martian-mono: "Martian Mono", monospace;
+  --ff-inter: "Inter", sans-serif;
+
+  /* Spacing */
+  --spacing-0: 0;
+  --spacing-025: 2px;
+  --spacing-050: 4px;
+  --spacing-075: 6px;
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-250: 20px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-800: 64px;
+  --spacing-1000: 80px;
+
+  /* Radius */
+  --radius-0: 0;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+}
+
+/*Typography*/
+.text-1 {
+  font-family: var(--ff-martian-mono);
+  font-weight: 700;
+  font-size: clamp(2.375rem, 1.8468rem + 2.2535vw, 3.875rem);
+  line-height: 120%;
+  letter-spacing: -2px;
+}
+
+.text-1-mobile {
+  font-size: 38px;
+}
+
+.text-2 {
+  font-family: var(--ff-martian-mono);
+  font-weight: 600;
+  font-size: clamp(2.125rem, 1.706rem + 1.1979vw, 3.125rem);
+  line-height: 130%;
+  letter-spacing: -2px;
+}
+
+.text-2-mobile {
+  font-size: 34px;
+}
+
+.text-3 {
+  font-family: var(--ff-martian-mono);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 1.2944rem + 0.8721vw, 2.125rem);
+  line-height: 130%;
+  letter-spacing: -1px;
+}
+
+.text-4 {
+  font-family: var(--ff-inter);
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: clamp(1.25rem, 1.1758rem + 0.3137vw, 1.5rem);
+  line-height: 140%;
+  letter-spacing: -0.5px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.text-5 {
+  font-family: var(--ff-inter);
+  font-weight: 600;
+  font-size: clamp(1rem, 0.9258rem + 0.3137vw, 1.25rem);
+  line-height: 130%;
+  letter-spacing: -1px;
 }
-a:hover {
-  color: #535bf2;
+
+.text-5-mobile {
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.text-6 {
+  font-family: var(--ff-inter);
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.8008rem + 0.3137vw, 1.125rem);
+  line-height: 120%;
+  letter-spacing: -1px;
+}
+
+/* Utility Classes*/
+.container {
+  padding-inline: var(--spacing-400);
+}
+
+.rounded {
+  border-radius: var(--radius-8);
+}
+
+.btn-primary {
+  background: var(--clr-light-salmon-500);
+  color: var(--clr-neutral-0);
+  border-radius: var(--radius-8);
+  padding: var(--spacing-150) var(--spacing-300);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* 4. Add accessible line-height */
+  line-height: 1.4;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-.card {
-  padding: 2em;
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
