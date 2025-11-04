@@ -56,21 +56,16 @@
   --ff-martian-mono: "Martian Mono", monospace;
   --ff-inter: "Inter", sans-serif;
 
-  /* Spacing */
-  --spacing-0: 0;
-  --spacing-025: 2px;
-  --spacing-050: 4px;
-  --spacing-075: 6px;
-  --spacing-100: 8px;
-  --spacing-150: 12px;
-  --spacing-200: 16px;
-  --spacing-250: 20px;
-  --spacing-300: 24px;
-  --spacing-400: 32px;
-  --spacing-500: 40px;
-  --spacing-600: 48px;
-  --spacing-800: 64px;
-  --spacing-1000: 80px;
+  /* Spacing - Responsive tokens */
+  --spacing-100: clamp(0.5rem, 0.4vw + 0.3rem, 0.5rem);    /* Mobilde 8px */
+  --spacing-200: clamp(1rem, 0.8vw + 0.6rem, 1rem);        /* 16px */
+  --spacing-250: clamp(1.25rem, 1vw + 0.75rem, 1.25rem);   /* 20px */
+  --spacing-300: clamp(1.5rem, 1.2vw + 0.9rem, 1.5rem);    /* 24px */
+  --spacing-400: clamp(1.5rem, 1.6vw + 1.2rem, 2rem);      /* Mobilde 24px, masaüstü 32px */
+  --spacing-500: clamp(2rem, 2vw + 1.5rem, 2.5rem);        /* Mobilde 32px, masaüstü 40px */
+  --spacing-600: clamp(2rem, 2.4vw + 1.6rem, 3rem);        /* Mobilde 32px, masaüstü 48px */
+  --spacing-800: clamp(3rem, 3.2vw + 2.4rem, 4rem);        /* Mobilde 48px, masaüstü 64px */
+  --spacing-1000: clamp(3.5rem, 4vw + 3rem, 5rem);         /* Mobilde 56px, masaüstü 80px */
 
   /* Radius */
   --radius-0: 0;
@@ -149,7 +144,9 @@
 
 /* Utility Classes*/
 .container {
-  padding-inline: var(--spacing-400);
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 .rounded {
@@ -157,10 +154,7 @@
 }
 
 .btn-primary {
-  background: var(--clr-light-salmon-500);
-  color: var(--clr-neutral-0);
-  border-radius: var(--radius-8);
-  padding: var(--spacing-150) var(--spacing-300);
+  color: var(--clr-neutral-900);
 }
 
 *,
@@ -182,10 +176,12 @@
 }
 
 body {
-  /* 4. Add accessible line-height */
+  color: var(--clr-neutral-700);
+  letter-spacing: -0.5px;
+  font-size: 1.25rem;
   line-height: 1.4;
-  /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-inter);
 }
 
 /* 6. Improve media defaults */
@@ -196,6 +192,7 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 /* 7. Inherit fonts for form controls */
@@ -204,6 +201,11 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* 8. Avoid text overflows */

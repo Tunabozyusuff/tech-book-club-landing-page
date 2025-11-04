@@ -1,6 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HeroSection from "./components/HeroSection.vue";
+import MainLayout from "./layouts/MainLayout.vue";
+</script>
 
 <template>
-<h1 class="text-1">Hello World</h1>
+  <MainLayout>
+    <HeroSection />
+  </MainLayout>
 </template>
 
+<style lang="scss" scoped>
+// Root component styles (if needed)
+</style>
