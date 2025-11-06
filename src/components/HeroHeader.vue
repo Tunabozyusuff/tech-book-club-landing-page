@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import logo from "../assets/images/logo.svg";
-</script>
+<script setup lang="ts"></script>
 <template>
   <header class="hero-header">
-    <img :src="logo" alt="Tech Book Logo" width="193" height="36" />
+    <img src="/images/logo.svg" alt="Tech Book Logo" width="193" height="36" />
   </header>
 </template>
 

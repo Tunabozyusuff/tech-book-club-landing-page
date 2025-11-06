@@ -57,15 +57,48 @@
   --ff-inter: "Inter", sans-serif;
 
   /* Spacing - Responsive tokens */
-  --spacing-100: clamp(0.5rem, 0.4vw + 0.3rem, 0.5rem);    /* Mobilde 8px */
-  --spacing-200: clamp(1rem, 0.8vw + 0.6rem, 1rem);        /* 16px */
-  --spacing-250: clamp(1.25rem, 1vw + 0.75rem, 1.25rem);   /* 20px */
-  --spacing-300: clamp(1.5rem, 1.2vw + 0.9rem, 1.5rem);    /* 24px */
-  --spacing-400: clamp(1.5rem, 1.6vw + 1.2rem, 2rem);      /* Mobilde 24px, masaüstü 32px */
-  --spacing-500: clamp(2rem, 2vw + 1.5rem, 2.5rem);        /* Mobilde 32px, masaüstü 40px */
-  --spacing-600: clamp(2rem, 2.4vw + 1.6rem, 3rem);        /* Mobilde 32px, masaüstü 48px */
-  --spacing-800: clamp(3rem, 3.2vw + 2.4rem, 4rem);        /* Mobilde 48px, masaüstü 64px */
-  --spacing-1000: clamp(3.5rem, 4vw + 3rem, 5rem);         /* Mobilde 56px, masaüstü 80px */
+  --spacing-100: clamp(0.5rem, 0.4vw + 0.3rem, 0.5rem); /* Mobilde 8px */
+  --spacing-150: clamp(0.75rem, 0.6vw + 0.45rem, 0.75rem); /* 12px */
+  --spacing-200: clamp(1rem, 0.8vw + 0.6rem, 1rem); /* 16px */
+  --spacing-250: clamp(1.25rem, 1vw + 0.75rem, 1.25rem); /* 20px */
+  --spacing-300: clamp(1.5rem, 1.2vw + 0.9rem, 1.5rem); /* 24px */
+  --spacing-400: clamp(
+    1.5rem,
+    1.6vw + 1.2rem,
+    2rem
+  ); /* Mobilde 24px, masaüstü 32px */
+  --spacing-500: clamp(
+    2rem,
+    2vw + 1.5rem,
+    2.5rem
+  ); /* Mobilde 32px, masaüstü 40px */
+  --spacing-600: clamp(
+    2rem,
+    2.4vw + 1.6rem,
+    3rem
+  ); /* Mobilde 32px, masaüstü 48px */
+  --spacing-800: clamp(
+    3rem,
+    3.2vw + 2.4rem,
+    4rem
+  ); /* Mobilde 48px, masaüstü 64px */
+  --spacing-1000: clamp(
+    3.5rem,
+    4vw + 3rem,
+    5rem
+  ); /* Mobilde 56px, masaüstü 80px */
+
+  /* Friendly spacing aliases for easier use */
+  --spacing-8: var(--spacing-100);
+  --spacing-12: var(--spacing-150);
+  --spacing-16: var(--spacing-200);
+  --spacing-20: var(--spacing-250);
+  --spacing-24: var(--spacing-300);
+  --spacing-32: var(--spacing-400);
+  --spacing-40: var(--spacing-500);
+  --spacing-48: var(--spacing-600);
+  --spacing-64: var(--spacing-800);
+  --spacing-80: var(--spacing-1000);
 
   /* Radius */
   --radius-0: 0;
@@ -81,7 +114,8 @@
 }
 
 /*Typography*/
-.text-1 {
+/* Text Preset 1 (Regular) - Martian Mono, Regular */
+.text-preset-1 {
   font-family: var(--ff-martian-mono);
   font-weight: 700;
   font-size: clamp(2.375rem, 1.8468rem + 2.2535vw, 3.875rem);
@@ -89,31 +123,12 @@
   letter-spacing: -2px;
 }
 
-.text-1-mobile {
+.text-preset-1-mobile {
   font-size: 38px;
 }
 
-.text-2 {
-  font-family: var(--ff-martian-mono);
-  font-weight: 600;
-  font-size: clamp(2.125rem, 1.706rem + 1.1979vw, 3.125rem);
-  line-height: 130%;
-  letter-spacing: -2px;
-}
-
-.text-2-mobile {
-  font-size: 34px;
-}
-
-.text-3 {
-  font-family: var(--ff-martian-mono);
-  font-weight: 600;
-  font-size: clamp(1.5rem, 1.2944rem + 0.8721vw, 2.125rem);
-  line-height: 130%;
-  letter-spacing: -1px;
-}
-
-.text-4 {
+/* Text Preset 2 - Inter, Regular */
+.text-preset-2 {
   font-family: var(--ff-inter);
   font-weight: 400;
   font-size: clamp(1.25rem, 1.1758rem + 0.3137vw, 1.5rem);
@@ -121,21 +136,63 @@
   letter-spacing: -0.5px;
 }
 
-.text-5 {
+/* Text Preset 3 (Semibold) - Martian Mono, Semibold */
+.text-preset-3 {
+  font-family: var(--ff-martian-mono);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 1.2944rem + 0.8721vw, 2.125rem);
+  line-height: 130%;
+  letter-spacing: -2px;
+}
+
+/* Text Preset 3 (Semibold) - Inter, Semibold */
+.text-preset-3-semibold {
   font-family: var(--ff-inter);
   font-weight: 600;
-  font-size: clamp(1rem, 0.9258rem + 0.3137vw, 1.25rem);
+  font-size: clamp(1.5rem, 1.2944rem + 0.8721vw, 2.125rem);
   line-height: 130%;
   letter-spacing: -1px;
 }
 
-.text-5-mobile {
+/* Text Preset 4 - Martian Mono, Semibold */
+.text-preset-4 {
+  font-family: var(--ff-martian-mono);
+  font-weight: 600;
+  font-size: clamp(2.125rem, 1.706rem + 1.1979vw, 3.125rem);
+  line-height: 130%;
+  letter-spacing: -1px;
+}
+
+.text-preset-4-mobile {
+  font-size: 34px;
+}
+
+/* Text Preset 5 (Mobile) - Martian Mono, Semibold */
+.text-preset-5 {
+  font-family: var(--ff-martian-mono);
+  font-weight: 600;
+  font-size: clamp(1rem, 0.9258rem + 0.3137vw, 1.25rem);
+  line-height: 110%;
+  letter-spacing: -1px;
+}
+
+/* Text Preset 6 - Martian Mono, Regular */
+.text-preset-6 {
+  font-family: var(--ff-martian-mono);
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.8008rem + 0.3137vw, 1.125rem);
+  line-height: 120%;
+  letter-spacing: -1px;
+}
+
+.text-preset-6-mobile {
   font-size: 16px;
   line-height: 130%;
 }
 
-.text-6 {
-  font-family: var(--ff-inter);
+/* Text Preset 7 - Martian Mono, Regular */
+.text-preset-7 {
+  font-family: var(--ff-martian-mono);
   font-weight: 400;
   font-size: clamp(0.875rem, 0.8008rem + 0.3137vw, 1.125rem);
   line-height: 120%;
